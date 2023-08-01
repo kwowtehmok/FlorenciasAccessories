@@ -21,6 +21,53 @@
             cursor: pointer;
         }
 
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 100px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover, .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
         form {
             background-color: #fff0f5;
             padding: 20px;
@@ -43,8 +90,13 @@
         }
     </style>
     <script>
-        function orderProduct(productName) {
-            window.location.href = "mailto:florenciasaccessories@gmail.com?subject=Order for " + productName + "&body=Please provide the following details to complete your order: %0D%0A%0D%0AName: %0D%0AEmail: %0D%0AQuantity:";
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+        }
+
+        function offClick() {
+            document.getElementById("modal01").style.display = "none";
         }
     </script>
 </head>
@@ -57,31 +109,92 @@
 
     <!-- Beach Wave -->
     <h3>Beach Wave</h3>
-    <img onclick="orderProduct('Beach Wave')" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet1.jpg" alt="Beach Wave">
+    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet1.jpg" alt="Beach Wave" onclick="onClick(this)">
     <p>Handcrafted with love, Beach Wave bracelet.</p>
+    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="Beach Wave"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
 
     <!-- Strawberry Shortcake -->
     <h3>Strawberry Shortcake</h3>
-    <img onclick="orderProduct('Strawberry Shortcake')" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/feaab0943e61dec6fc3f442348ad741d40ec1274/bracelet2.jpg" alt="Strawberry Shortcake">
+    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/feaab0943e61dec6fc3f442348ad741d40ec1274/bracelet2.jpg" alt="Strawberry Shortcake" onclick="onClick(this)">
     <p>Handcrafted with love, Strawberry Shortcake bracelet.</p>
+    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="Strawberry Shortcake"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
 
     <!-- Candy Twins -->
     <h3>Candy Twins</h3>
-    <img onclick="orderProduct('Candy Twins')" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/candytwins.jpg" alt="Candy Twins">
+    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/candytwins.jpg" alt="Candy Twins" onclick="onClick(this)">
     <p>Handcrafted with love, Candy Twins bracelet.</p>
+    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="Candy Twins"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
 
     <!-- SkyFire -->
     <h3>SkyFire</h3>
-    <img onclick="orderProduct('SkyFire')" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/skyfire.jpg" alt="SkyFire">
+    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/skyfire.jpg" alt="SkyFire" onclick="onClick(this)">
     <p>Handcrafted with love, SkyFire bracelet.</p>
+    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="SkyFire"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
 
     <!-- Sunset Island -->
     <h3>Sunset Island</h3>
-    <img onclick="orderProduct('Sunset Island')" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/sunsetisland.jpg" alt="Sunset Island">
+    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/sunsetisland.jpg" alt="Sunset Island" onclick="onClick(this)">
     <p>Handcrafted with love, Sunset Island bracelet.</p>
+    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="Sunset Island"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
+
+    <!-- Modal/Image Popup -->
+    <div id="modal01" class="modal" onclick="offClick()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
 
     <footer>
-        <p>Made with 💖 by Florencia | Contact us at <a href="mailto:florenciasaccessories@gmail.com">florenciasaccessories@gmail.com</a></p>
+        <p>Made with love by Florencia</p>
     </footer>
 </body>
 </html>
