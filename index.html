@@ -6,11 +6,14 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+        /* Style body */
         body {
             font-family: 'Indie Flower', cursive;
             background-color: #ffebcd;
             color: #333;
-            padding-bottom: 50px; /* added padding to the bottom of the body */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         img {
@@ -26,7 +29,7 @@
             border-radius: 20px;
         }
 
-        /* Styles for navbar and footer */
+        /* Style for navbar */
         .navbar {
             background-color: #ff69b4;
             padding: 15px;
@@ -34,14 +37,13 @@
             text-align: center;
         }
 
+        /* Style for footer */
         .footer {
             background-color: #ff69b4;
             padding: 15px;
             color: white;
             text-align: center;
-            position: absolute;
-            width: 100%;
-            bottom: 0;
+            margin-top: auto;
         }
     </style>
 </head>
