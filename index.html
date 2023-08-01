@@ -1,58 +1,55 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Florencia's Accessories</title>
-  <style>
-    body {
-      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Helvetica', 'Arial', sans-serif;
-      background-color: #FFCCFF; /* This gives the background a pink color */
-      color: #660066; /* This changes the text color to a purple */
-    }
-    .product {
-      margin: 20px; 
-      padding: 10px; 
-      border: 2px solid #660066; /* This changes the product border color to purple */
-    }
-    .product img {
-      max-width: 200px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Florencia's Accessories</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f1f1;
+            color: #333;
+        }
+        img {
+            width: 200px;
+            height: auto;
+        }
+    </style>
 </head>
 <body>
-
-<h1>Florencia's Accessories</h1>
-
-<div class="product">
+    <h1>Welcome to Florencia's Accessories!</h1>
+    <p>Our handcrafted bracelets are lovingly made by Florencia, a 9-year-old artist. Explore our catalog and order your favorite piece now!</p>
+    
+    <!-- Beach Wave -->
+    <h3>Beach Wave</h3>
   <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet1.jpg" alt="Beach Wave">
-  <h2>Beach Wave</h2>
-  <p>This is a beautiful handmade bracelet.</p>
-  <p>$5.00</p>
-  <form action="mailto:cue.urena@gmail.com" method="post" enctype="text/plain">
-    Name:<br>
-    <input type="text" name="name" value="Your name"><br>
-    E-mail:<br>
-    <input type="text" name="mail" value="Your email"><br>
-    Quantity:<br>
-    <input type="text" name="quantity" value="1"><br><br>
-    <input type="submit" value="Submit Order">
-  </form> 
-</div>
-
-<div class="product">
-  <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/e3448514e655118e9c25aec9e85dd5bc13ed0df9/bracelet2.jpg" alt="Strawberry Shortcake">
-  <h2>Strawberry Shortcake</h2>
-  <p>This is a beautiful handmade bracelet.</p>
-  <p>$5.00</p>
-  <form action="mailto:cue.urena@gmail.com" method="post" enctype="text/plain">
-    Name:<br>
-    <input type="text" name="name" value="Your name"><br>
-    E-mail:<br>
-    <input type="text" name="mail" value="Your email"><br>
-    Quantity:<br>
-    <input type="text" name="quantity" value="1"><br><br>
-    <input type="submit" value="Submit Order">
-  </form> 
-</div>
-
+    <p>Handcrafted with love, Beach Wave bracelet.</p>
+    <form action="mailto:cue.urena@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="Beach Wave"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
+    
+    <!-- Strawberry Shortcake -->
+    <h3>Strawberry Shortcake</h3>
+    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/e3448514e655118e9c25aec9e85dd5bc13ed0df9/bracelet2.jpg" alt="Strawberry Shortcake">
+    <p>Handcrafted with love, Strawberry Shortcake bracelet.</p>
+    <form action="mailto:cue.urena@gmail.com" method="post" enctype="text/plain">
+        Name:<br>
+        <input type="text" name="name" value="Your name"><br>
+        E-mail:<br>
+        <input type="text" name="mail" value="Your email"><br>
+        Product:<br>
+        <input type="hidden" name="product" value="Strawberry Shortcake"><br>
+        Quantity:<br>
+        <input type="text" name="quantity" value="1"><br><br>
+        <input type="submit" value="Submit Order">
+    </form>
 </body>
 </html>
+
