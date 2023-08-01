@@ -18,6 +18,7 @@
             border: 5px solid #ff69b4;
             border-radius: 20px;
             margin-bottom: 20px;
+            cursor: pointer;
         }
 
         form {
@@ -40,6 +41,77 @@
             font-size: 28px;
             color: #ff1493;
         }
+
+        /* Style for the image modal */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Caption of Modal Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation */
+        .modal-content, #caption {  
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.6s;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @-webkit-keyframes zoom {
+            from {-webkit-transform:scale(0)} 
+            to {-webkit-transform:scale(1)}
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -51,86 +123,57 @@
 
     <!-- Beach Wave -->
     <h3>Beach Wave</h3>
-    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet1.jpg" alt="Beach Wave">
+    <img id="beach-wave" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet1.jpg" alt="Beach Wave" onclick="openModal(this);">
     <p>Handcrafted with love, Beach Wave bracelet.</p>
-    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
-        Name:<br>
-        <input type="text" name="name" value="Your name"><br>
-        E-mail:<br>
-        <input type="text" name="mail" value="Your email"><br>
-        Product:<br>
-        <input type="hidden" name="product" value="Beach Wave"><br>
-        Quantity:<br>
-        <input type="text" name="quantity" value="1"><br><br>
-        <input type="submit" value="Submit Order">
-    </form>
 
-    <!-- Strawberry Shortcake -->
-    <h3>Strawberry Shortcake</h3>
-    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/feaab0943e61dec6fc3f442348ad741d40ec1274/bracelet2.jpg" alt="Strawberry Shortcake">
-    <p>Handcrafted with love, Strawberry Shortcake bracelet.</p>
-    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
-        Name:<br>
-        <input type="text" name="name" value="Your name"><br>
-        E-mail:<br>
-        <input type="text" name="mail" value="Your email"><br>
-        Product:<br>
-        <input type="hidden" name="product" value="Strawberry Shortcake"><br>
-        Quantity:<br>
-        <input type="text" name="quantity" value="1"><br><br>
-        <input type="submit" value="Submit Order">
-    </form>
+    <!-- Forest Flow -->
+    <h3>Forest Flow</h3>
+    <img id="forest-flow" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet2.jpg" alt="Forest Flow" onclick="openModal(this);">
+    <p>Feel the calmness of the forest with the Forest Flow bracelet.</p>
 
-    <!-- Candy Twins -->
-    <h3>Candy Twins</h3>
-    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/candytwins.jpg" alt="Candy Twins">
-    <p>Handcrafted with love, Candy Twins bracelet.</p>
-    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
-        Name:<br>
-        <input type="text" name="name" value="Your name"><br>
-        E-mail:<br>
-        <input type="text" name="mail" value="Your email"><br>
-        Product:<br>
-        <input type="hidden" name="product" value="Candy Twins"><br>
-        Quantity:<br>
-        <input type="text" name="quantity" value="1"><br><br>
-        <input type="submit" value="Submit Order">
-    </form>
+    <!-- Crystal Clear -->
+    <h3>Crystal Clear</h3>
+    <img id="crystal-clear" src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/de986758f4819f78b6543bc4fd301c4dd8d0cd58/bracelet3.jpg" alt="Crystal Clear" onclick="openModal(this);">
+    <p>Simplicity at its finest with the Crystal Clear bracelet.</p>
 
-    <!-- SkyFire -->
-    <h3>SkyFire</h3>
-    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/skyfire.jpg" alt="SkyFire">
-    <p>Handcrafted with love, SkyFire bracelet.</p>
-    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
-        Name:<br>
-        <input type="text" name="name" value="Your name"><br>
-        E-mail:<br>
-        <input type="text" name="mail" value="Your email"><br>
-        Product:<br>
-        <input type="hidden" name="product" value="SkyFire"><br>
-        Quantity:<br>
-        <input type="text" name="quantity" value="1"><br><br>
-        <input type="submit" value="Submit Order">
-    </form>
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
 
-    <!-- Sunset Island -->
-    <h3>Sunset Island</h3>
-    <img src="https://github.com/kwowtehmok/FlorenciasAccessories/raw/3e19b1e4177b8d78884ed6285b77f4acb572e142/sunsetisland.jpg" alt="Sunset Island">
-    <p>Handcrafted with love, Sunset Island bracelet.</p>
-    <form action="mailto:florenciasaccessories@gmail.com" method="post" enctype="text/plain">
-        Name:<br>
-        <input type="text" name="name" value="Your name"><br>
-        E-mail:<br>
-        <input type="text" name="mail" value="Your email"><br>
-        Product:<br>
-        <input type="hidden" name="product" value="Sunset Island"><br>
-        Quantity:<br>
-        <input type="text" name="quantity" value="1"><br><br>
-        <input type="submit" value="Submit Order">
-    </form>
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the image and insert it inside the modal - use its "alt" text as a caption
+        function openModal(imgElement) {
+            var img = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            img.src = imgElement.src;
+            captionText.innerHTML = imgElement.alt;
+        }
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() { 
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
     <footer>
-        <p>Made with 💖 by Florencia | Contact us at <a href="mailto:florenciasaccessories@gmail.com">florenciasaccessories@gmail.com</a></p>
+        <p>Thank you for visiting Florencia's Accessories. We hope you found a bracelet you love!</p>
     </footer>
 </body>
 </html>
