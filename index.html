@@ -3,9 +3,19 @@
 <head>
   <title>Florencia's Accessories</title>
   <style>
-    body {font-family: Arial, sans-serif;}
-    .product {margin: 20px; padding: 10px; border: 1px solid #ddd;}
-    .product img {max-width: 200px;}
+    body {
+      font-family: 'Comic Sans MS', 'Chalkboard SE', 'Helvetica', 'Arial', sans-serif;
+      background-color: #FFCCFF; /* This gives the background a pink color */
+      color: #660066; /* This changes the text color to a purple */
+    }
+    .product {
+      margin: 20px; 
+      padding: 10px; 
+      border: 2px solid #660066; /* This changes the product border color to purple */
+    }
+    .product img {
+      max-width: 200px;
+    }
   </style>
 </head>
 <body>
@@ -14,7 +24,23 @@
 
 <div class="product">
   <img src="/bracelet1.jpg" alt="Beach Wave">
-  <h2>Bracelet 1</h2>
+  <h2>Beach Wave</h2>
+  <p>This is a beautiful handmade bracelet.</p>
+  <p>$10.00</p>
+  <form action="mailto:cue.urena@gmail.com" method="post" enctype="text/plain">
+    Name:<br>
+    <input type="text" name="name" value="Your name"><br>
+    E-mail:<br>
+    <input type="text" name="mail" value="Your email"><br>
+    Quantity:<br>
+    <input type="text" name="quantity" value="1"><br><br>
+    <input type="submit" value="Submit Order">
+  </form> 
+</div>
+
+<div class="product">
+  <img src="/bracelet2.jpg" alt="Strawberry Shortcake">
+  <h2>Strawberry Shortcake</h2>
   <p>This is a beautiful handmade bracelet.</p>
   <p>$10.00</p>
   <form action="mailto:placeholderemail@emaildomaingoeshere.com" method="post" enctype="text/plain">
